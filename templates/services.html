@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}
+Services
+{% endblock title %}
+
+{% block body %}
+<style>
+  .services-section {
+    background-image: url("/static/img/bg-ice.webp"); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 0;
+    color: white;
+    backdrop-filter: blur(2px);
+  }
+
+  .service-card {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+  }
+
+  .service-card .card-title {
+    color: #f8d2e0;
+  }
+</style>
+
+<div class="services-section">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold">🍦 Our Services</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+      <!-- Card 1 -->
+      <div class="col">
+        <div class="card service-card h-100 shadow-lg">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <span style="font-size: 2.5rem;">🎉</span>
+            </div>
+            <h5 class="card-title fw-semibold">Party & Event Catering</h5>
+            <p class="card-text">Make your events extra sweet with our full-service ice cream catering for birthdays, weddings & more!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col">
+        <div class="card service-card h-100 shadow-lg">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <span style="font-size: 2.5rem;">🛵</span>
+            </div>
+            <h5 class="card-title fw-semibold">Home Delivery</h5>
+            <p class="card-text">Scoop-to-door delivery. Your favorite flavors, delivered fast & frozen.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 3 -->
+      <div class="col">
+        <div class="card service-card h-100 shadow-lg">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <span style="font-size: 2.5rem;">📦</span>
+            </div>
+            <h5 class="card-title fw-semibold">Subscription Plans</h5>
+            <p class="card-text">Sign up for sweet surprises with weekly or monthly ice cream drops at your doorstep.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<p style="color:black;">You have visited this page {{ visit_count }} times.</p>
+
+<script>
+  sessionStorage.setItem('visit_count', '{{ visit_count }}');
+</script>
+
+
+{% endblock body %}

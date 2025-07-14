@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %} 
+Contact
+{% endblock title %}
+
+{% block body %}
+<div class="container-fluid px-0">
+    <img src="https://www.namasteindiaicecream.com/media/images/cmspage/image/contact-us_1366x650-1649067719.jpg" class="d-block w-100 mx-0" style="height: 500px; width: 200px;" alt="...">
+</div>
+<form method="post" action="/contact">
+    {% csrf_token %}
+<div class="mb-3 ms-4 mt-4">
+  <label for="Name" class="form-label">Name</label>
+  <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+</div>
+<div class="mb-3 ms-4">
+  <label for="email" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+</div>
+<div class="mb-3 ms-4">
+  <label for="phone" class="form-label">Contact No.</label>
+  <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter Your Contact No.">
+</div>
+<div class="mb-3 ms-4">
+  <label for="desc" class="form-label">Write down your issue.</label>
+  <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+</div>
+<button class="btn btn-primary mb-3 ms-4" type="submit">Submit</button>
+</form>
+{% endblock body %}

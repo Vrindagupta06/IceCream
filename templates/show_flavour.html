@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Your favorite ice cream flavour is:</h2>
+  <p>{{ flavour|title }}</p>
+  <a href="{% url 'choose_flavour' %}">Change Flavour</a>
+  {% if request.session.last_flavour %}
+<p style="color:white;">Your last selected flavour was: {{ request.session.last_flavour }}</p>
+{% endif %}
+
+<script>
+  const flavour = '{{ request.session.last_flavour|default:"" }}';
+  if (flavour) sessionStorage.setItem('last_flavour', flavour);
+</script>
+
+{% endblock %}
